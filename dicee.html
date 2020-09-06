@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Dicee</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <div class="container">
+      <h1 id="so">Refresh Me</h1>
+
+      <div class="dice">
+        <p class="you">Player 1</p>
+        <img class="img1" src="6.png" alt="Dice 1">
+      </div>
+
+      <div class="dice">
+        <p>Computer</p>
+        <img class="img2" src="6.png" alt="Dice 2">
+      </div>
+
+    </div>
+
+
+  </body>
+   <script>
+       var pl=prompt("Enter your name:");
+       document.querySelector(".you").innerHTML=pl;
+       function op(a){
+         while(a<7){
+          document.querySelector(".img1").setAttribute("src",a+".png");
+          break;
+         }
+       }
+       document.addEventListener("keydown", ac);
+       function ac(){
+   var b=event.key;
+   if(b<7){
+    
+    ye(b);
+    var a=(Math.random()*6)+1;
+     a=Math.floor(a);
+    op(a);
+    ni(a,b,pl);
+   }
+   else{
+     alert("PLEASE ENTER A NUMBER BETWEEN 1-6");
+   }
+    }
+    
+   
+       function ye(b){
+         while(b<7){
+          document.querySelector(".img2").setAttribute("src",b+".png");
+          break;
+         }
+       }
+        function ni(a,b,pl){
+               if(a>b){
+               document.getElementById("so").innerHTML="🚩 "+pl+" WIN";
+               document.getElementById("so").style.fontSize="5rem";
+        }
+        
+        else if(b>a){
+          document.getElementById("so").innerHTML="🚩 Computer WIN";
+          document.getElementById("so").style.fontSize="5rem";
+        }
+        else{
+          document.getElementById("so").innerHTML="DRAW";
+        }
+      }
+        ni(a,b);
+   </script>
+  <footer style="background-color: red;">
+    www 🎲 DEY'S  Argha🎲 com
+  </footer>
+</html>
